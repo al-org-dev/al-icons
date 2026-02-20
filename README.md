@@ -1,6 +1,6 @@
 # al-icons
 
-`al-icons` owns icon runtime assets for al-folio v1.x.
+`al_icons` owns icon runtime assets for `al-folio` v1.x.
 
 ## Responsibilities
 
@@ -8,24 +8,26 @@
 - Centralize pinned icon CDN URLs and optional SRI usage
 - Keep icon ownership out of `al_folio_core` and starter runtime files
 
-## Usage
+## Installation
 
-Add plugin to `_config.yml`:
+```ruby
+gem 'al_icons'
+```
 
-```yml
+```yaml
 plugins:
   - al_icons
 ```
 
-Add parse-safe include wrapper in theme/head templates:
+Render in head templates:
 
 ```liquid
 {% include plugins/al_icons_styles.liquid %}
 ```
 
-Expected config:
+## Expected config
 
-```yml
+```yaml
 third_party_libraries:
   fontawesome:
     url:
@@ -44,4 +46,8 @@ third_party_libraries:
       css: ...
 ```
 
-`integrity.css` is optional per library; when omitted, the tag renders without integrity/crossorigin attributes.
+`integrity.css` is optional per library.
+
+## Contributing
+
+Icon provider/CDN ownership changes should be proposed in this repository.
